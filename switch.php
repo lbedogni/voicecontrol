@@ -6,7 +6,7 @@ require 'Milight.php';
 $action = $argv[1];
 $location = $argv[2];
 
-$milight = new Milight('192.168.1.150');
+$milight = new Milight('192.168.1.3');
 
 if ($action == "on") {
     if ($location == 0) {
