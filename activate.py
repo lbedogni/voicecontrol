@@ -2,6 +2,8 @@ import sys, os, pyaudio
 from pocketsphinx import *
 
 modeldir = "/usr/local/share/pocketsphinx/model"
+modeldir = "../../pocketsphinx-5prealpha/model/en-us/"
+modeldir = "model/"
 # Create a decoder with certain model
 config = Decoder.default_config()
 config.set_string('-hmm', os.path.join(modeldir, 'hmm/en_US/hub4wsj_sc_8k'))
