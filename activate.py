@@ -9,7 +9,7 @@ config = Decoder.default_config()
 config.set_string('-hmm', os.path.join(modeldir, 'hmm/en_US/hub4wsj_sc_8k'))
 config.set_string('-dict', os.path.join(modeldir, 'lm/en_US/cmu07a.dic'))
 config.set_string('-keyphrase', 'leopoldo')
-config.set_float('-kws_threshold', 1e-50)
+config.set_float('-kws_threshold', 1e-30)
 
 decoder = Decoder(config)
 decoder.start_utt()
@@ -30,6 +30,7 @@ while True:
         decoder.end_utt()
         stream.stop_stream()
         import subprocess
-        subprocess.call(["python3","trying.py"])
+        #subprocess.call(["python3","trying.py"])
+        subprocess.call(["python3","recognize_background.py"])
         stream.start_stream()
         decoder.start_utt()
